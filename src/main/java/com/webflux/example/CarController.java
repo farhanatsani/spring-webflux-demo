@@ -15,7 +15,7 @@ public class CarController {
         this.carService = carService;
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Mono<Car>> getCarById(int id) {
+    public ResponseEntity<Mono<Car>> getCarById(@PathVariable int id) {
         return ResponseEntity.ok(
             carService.findById(id)
         );
